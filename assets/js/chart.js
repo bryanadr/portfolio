@@ -1,0 +1,5 @@
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function lineChart(el,series,min,max,label){const W=600,H=170;let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${label}"><line x1="0" y1="${H-1}" x2="${W}" y2="${H-1}" stroke="#242b33"/>`;
+series.forEach(o=>{const n=o.v.length;if(!n)return;const p=o.v.map((v,i)=>`${n<2?0:(i*W/(n-1)).toFixed(1)},${(H-8-(v-min)/(max-min)*(H-16)).toFixed(1)}`).join(' ');s+=`<polyline fill="none" stroke="${o.c}" stroke-width="2" points="${p}"/>`});el.innerHTML=s+'</svg>'}
+function barChart(el,labels,series,label){const W=600,H=190,n=labels.length,max=Math.max(1,...series.flatMap(o=>o.v)),gw=W/n,bw=Math.min(28,gw/(series.length+1));let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${label}">`;
+labels.forEach((l,i)=>{series.forEach((o,j)=>{const h=o.v[i]/max*(H-40),x=i*gw+gw/2-series.length*bw/2+j*bw;s+=`<rect x="${x}" y="${H-24-h}" width="${bw-3}" height="${h}" fill="${o.c}" rx="2"/>`});s+=`<text x="${i*gw+gw/2}" y="${H-6}" fill="#9aa4b2" font-size="12" text-anchor="middle">${esc(l)}</text>`});el.innerHTML=s+'</svg>'}

@@ -1,0 +1,12 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QA Test Case Generator | Bryan Adrian</title><meta name="description" content="Gerador de casos de teste de software."><link rel="stylesheet" href="../../assets/css/style.css"></head><body><header class="top"><div class="w nav"><a class="logo" href="../../index.html">&larr; bryan<b>.dev</b></a><span class="m" style="font-size:14px">QA Test Case Generator</span></div></header><main class="w app">
+<div class="g2"><form class="card" id="f" novalidate>
+<h3>Dados do caso de teste</h3>
+<label for="n">Funcionalidade *</label><input id="n" maxlength="120">
+<label for="d">Descrição do cenário</label><textarea id="d" rows="2"></textarea>
+<label for="p">Pré-condições (uma por linha)</label><textarea id="p" rows="2"></textarea>
+<label for="s">Passos de execução * (um por linha)</label><textarea id="s" rows="4"></textarea>
+<label for="e">Resultado esperado *</label><textarea id="e" rows="2"></textarea>
+<div class="err" id="err" role="alert"></div>
+<div class="row" style="margin-top:8px"><button class="btn p" type="submit">Gerar</button><button class="btn" type="button" id="cl">Limpar</button></div></form>
+<div class="card"><div class="bar"><h3>Resultado</h3><button class="btn" id="cp" disabled>Copiar</button></div><pre id="o" aria-live="polite">Preencha o formulário e clique em Gerar.</pre></div></div>
+</main><script src="../../assets/js/chart.js"></script><script src="app.js"></script></body></html>

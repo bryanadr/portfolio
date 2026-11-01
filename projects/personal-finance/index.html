@@ -1,0 +1,10 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Personal Finance Dashboard | Bryan Adrian</title><meta name="description" content="Controle financeiro pessoal com persistência local."><link rel="stylesheet" href="../../assets/css/style.css"></head><body><header class="top"><div class="w nav"><a class="logo" href="../../index.html">&larr; bryan<b>.dev</b></a><span class="m" style="font-size:14px">Personal Finance Dashboard</span></div></header><main class="w app">
+<div class="g3"><div class="card"><span class="m">Saldo total</span><div class="big" id="sd">–</div></div><div class="card"><span class="m">Receitas do mês</span><div class="big receita" id="rm">–</div></div><div class="card"><span class="m">Despesas do mês</span><div class="big despesa" id="dm">–</div></div></div>
+<div class="g2" style="margin-top:20px"><form class="card" id="f" novalidate><h3>Nova movimentação</h3>
+<label for="ty">Tipo</label><select id="ty"><option value="receita">Receita</option><option value="despesa" selected>Despesa</option></select>
+<label for="ds">Descrição *</label><input id="ds" maxlength="80"><label for="vl">Valor (R$) *</label><input id="vl" type="number" step="0.01" min="0.01">
+<label for="ct">Categoria</label><select id="ct"></select><label for="dt">Data *</label><input id="dt" type="date">
+<div class="err" id="err" role="alert"></div><button class="btn p">Adicionar</button></form>
+<div class="card"><h3>Receitas × despesas (últimos 6 meses)</h3><div id="ch"></div><p class="m" style="font-size:.8rem"><span class="receita">■</span> Receitas <span class="despesa">■</span> Despesas</p></div></div>
+<div class="card" style="margin-top:20px"><h3>Histórico</h3><div id="hs"></div></div>
+</main><script src="../../assets/js/chart.js"></script><script src="app.js"></script></body></html>
